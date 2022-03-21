@@ -1,4 +1,6 @@
 # colab-test
+Para desenvolver esta aplicação, utilizei o Nuxt. Decidi exibir os usuários em cards, então a primeira coisa que fiz foi criar um componente para esse card.
+Em seguida configurei o axios para realizar a requisição na API e fiz a iteração do resultado nos cards, inserindo os dados através das props.
 
 ## Build Setup
 
