@@ -2,18 +2,21 @@
   <v-card width="350px" class="pa-2">
     <div class="d-flex flex-row justify-space-around">
       <v-avatar size="82">
-        <v-img src="https://randomuser.me/api/portraits/thumb/women/71.jpg" />
+        <v-img :src="user.picture.thumbnail" />
       </v-avatar>
     </div>
     <v-divider class="my-4"></v-divider>
     <v-card-title>
-      Nome completo<v-icon class="ml-2">mdi-arrow-right</v-icon>
+      {{ user.name.title + ' ' + user.name.first + ' ' + user.name.last }}
+      <v-icon :color="user.gender === 'male' ? 'blue' : 'pink'" class="ml-2">
+        {{ user.gender === 'male' ? 'mdi-gender-male' : 'mdi-gender-female' }}
+      </v-icon>
     </v-card-title>
     <v-card-subtitle>
-      email@email.com <br />
-      22 933006291 <br /><br />
-      Cidade - Estado <br />
-      País
+      {{ user.email }} <br />
+      {{ user.cell }} <br /><br />
+      {{ user.location.city }} - {{ user.location.state }} <br />
+      {{ user.location.country }}
     </v-card-subtitle>
   </v-card>
 </template>
